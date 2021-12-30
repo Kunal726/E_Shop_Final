@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/drawable/button_shape.xml" value="0.2651282051282051" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/drawable/ic_menu_notify.xml" value="0.2651282051282051" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/drawable/imageborder.xml" value="0.2651282051282051" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/drawable/location_icon.xml" value="0.22407407407407406" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/activity_home_screen.xml" value="0.1296875" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/activity_shop.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/activity_shop_owner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/activity_splash_screen.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/bill_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/category_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/charges_layout.xml" value="0.264" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/check_internet_dialog.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_bill.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_billing_payments.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_charges.xml" value="0.22175925925925927" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_dashboard.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_home.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_owner__data.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_owner__sign__in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_owner_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_owner_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_payment.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_prod_data.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_product.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_single_product.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/fragment_user_bill.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/input_dialog.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/product_list_row.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/recycle_order.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/recycle_order_list.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/recycle_payment_list.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/layout/user_bill_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/menu/bottom_navigation_drawer.xml" value="0.253125" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/menu/menu.xml" value="0.264" />
+        <entry key="..\:/Programs/Internship/ MDU SantiSolution PVT LTD/E_Shop_Final/shop_owner/src/main/res/xml/network_security_config.xml" value="0.253125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
