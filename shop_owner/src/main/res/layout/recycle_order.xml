@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+    
+    <TextView
+        android:id="@+id/text_order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/orange" 
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/text_order_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        android:maxLines="2"/>
+
+    <TextView
+        android:id="@+id/text_order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/orange"
+        android:layout_margin="5dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1,2,3"
+        android:layout_margin="5dp">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="80dp"
+                android:text="@string/product"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_column="1"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:text="@string/quantity"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_column="1"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:text="@string/price"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_column="1"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:id="@+id/order_list" />
+
+    <TextView
+        android:id="@+id/text_order_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/text_order_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/text_order_final_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"/>
+        
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>
