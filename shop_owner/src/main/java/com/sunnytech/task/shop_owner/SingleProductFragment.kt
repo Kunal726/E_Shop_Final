@@ -40,6 +40,13 @@ class SingleProductFragment(private var productmodelarraylist : ArrayList<Produc
         binding.btnSave.isEnabled = false
         binding.btnSave.visibility = View.INVISIBLE
 
+        val str = SharedPrefmanager.getInstance(requireContext().applicationContext).keyShopCat
+        if(str == "Electrician" || str ==  "Doctor" || str ==  "Plumber" || str ==  "Clinic") {
+            binding.layoutqty.visibility = View.GONE
+        } else {
+            binding.layoutqty.visibility = View.VISIBLE
+        }
+
         Glide.with(requireContext()).load(productmodelarraylist[position].image).into(binding.singlePrdImage)
         binding.singleName.setText (productmodelarraylist[position].prdname)
         binding.singlePrice.setText (productmodelarraylist[position].price)

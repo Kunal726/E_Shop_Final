@@ -14,7 +14,7 @@
         android:padding="5dp">
 
         <TextView
-            android:id="@+id/text_payment_id"
+            android:id="@+id/text_service_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -23,7 +23,7 @@
             android:layout_margin="5dp"/>
 
         <TextView
-            android:id="@+id/text_payment_order_id"
+            android:id="@+id/text_service_addr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -33,16 +33,7 @@
             android:maxLines="2"/>
 
         <TextView
-            android:id="@+id/text_payment_mode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_margin="5dp"/>
-
-        <TextView
-            android:id="@+id/text_payment_status"
+            android:id="@+id/text_service_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -51,7 +42,54 @@
             android:layout_margin="5dp"/>
 
         <TextView
-            android:id="@+id/text_payment_amount"
+            android:id="@+id/text_service_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="5dp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2,3"
+            android:layout_margin="5dp">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:text="@string/cause"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:text="@string/price"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/cause_list" />
+
+
+        <TextView
+            android:id="@+id/text_service_final_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -62,14 +100,13 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:id="@+id/btn_recieved"
+            android:layout_margin="8dp"
+            android:gravity="center"
             android:layout_gravity="center"
-            android:text="@string/received"
-            android:visibility="visible"/>
+            android:text="Completed"
+            android:visibility="gone"
+            android:id="@+id/btn_complete"/>
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

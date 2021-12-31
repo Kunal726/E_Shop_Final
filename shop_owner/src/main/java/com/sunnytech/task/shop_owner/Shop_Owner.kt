@@ -8,7 +8,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -18,7 +17,6 @@ import com.android.volley.toolbox.Volley
 import com.theartofdev.edmodo.cropper.CropImage
 import org.json.JSONException
 import org.json.JSONObject
-import java.text.SimpleDateFormat
 import java.util.*
 
 class Shop_Owner : AppCompatActivity() {
@@ -50,7 +48,9 @@ class Shop_Owner : AppCompatActivity() {
                                     obj.getString("email"),
                                     obj.getString("shop"),
                                     obj.getString("date"),
-                                    obj.getString("status")
+                                    obj.getString("status"),
+                                    obj.getString("category"),
+                                    obj.getString("service")
                                 )
 
                         }

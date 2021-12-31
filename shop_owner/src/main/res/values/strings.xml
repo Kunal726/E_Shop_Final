@@ -64,4 +64,6 @@
     <string name="pay_monthly_service_charges">Pay Monthly Service Charges</string>
     <string name="image_to_get_payment_charges">Image to get Payment Charges</string>
     <string name="send_to_admin">Send To Admin</string>
+    <string name="received">Received</string>
+    <string name="cause">Cause</string>
 </resources>

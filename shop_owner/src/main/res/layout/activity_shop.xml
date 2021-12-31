@@ -7,6 +7,7 @@
     tools:context=".Shop"
     android:background="#FFFFFF">
 
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,10 +16,9 @@
             android:id="@+id/fragment_container_shop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
     </androidx.core.widget.NestedScrollView>
-
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
@@ -37,7 +37,8 @@
             app:menu="@menu/bottom_navigation_drawer"
             android:background="@android:color/transparent"
             android:layout_marginEnd="15dp"
-            app:labelVisibilityMode="selected"/>
+            app:labelVisibilityMode="selected"
+            android:visibility="visible"/>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
@@ -45,10 +46,10 @@
         android:id="@+id/add_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_add"
-        app:maxImageSize="50dp"
         android:backgroundTint="@color/white"
+        android:contentDescription="@string/used_to_add_product_in_shop"
+        android:src="@drawable/ic_add"
         app:layout_anchor="@id/bottom_app_bar"
-        android:contentDescription="@string/used_to_add_product_in_shop" />
+        app:maxImageSize="50dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

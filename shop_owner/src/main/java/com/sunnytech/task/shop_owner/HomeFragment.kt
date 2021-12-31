@@ -42,17 +42,22 @@ class HomeFragment : Fragment(), Product_Info {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-            (activity as Shop).findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
+        (activity as Shop).findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
+        productmodelArrayList = ArrayList()
+        recyclerView = binding.productsList
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        productAdapter = Product_Adapter(requireContext(), productmodelArrayList, this)
+        recyclerView.adapter = productAdapter
+        binding.shopNameDisplay.text = SharedPrefmanager.getInstance(requireContext().applicationContext).keyShopName
 
-            productmodelArrayList = ArrayList()
-            recyclerView = binding.productsList
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            productAdapter = Product_Adapter(requireContext(), productmodelArrayList, this)
-            recyclerView.adapter = productAdapter
+        val str = SharedPrefmanager.getInstance(requireContext().applicationContext).keyShopCat
+        if(str == "Electrician" || str ==  "Doctor" || str ==  "Plumber" || str ==  "Clinic") {
+            "Services".also { binding.productText.text = it }
+        }
+        else
+            "Products".also { binding.productText.text = it }
 
-            binding.shopNameDisplay.text = SharedPrefmanager.getInstance(requireContext().applicationContext).keyShopName
-
-            ShowProducts()
+        ShowProducts()
     }
 
     private fun ShowProducts() {

@@ -52,6 +52,14 @@ class ProductFragment : Fragment() {
         binding.EditPrdName.setText("")
         binding.EditPrdPrice.setText("")
         binding.EditPrdQty.setText("")
+        val str = SharedPrefmanager.getInstance(requireContext().applicationContext).keyShopCat
+        if(str == "Electrician" || str ==  "Doctor" || str ==  "Plumber" || str ==  "Clinic"){
+            binding.EditPrdQty.setText("0")
+            binding.EditPrdQty.visibility = View.GONE
+        } else {
+            binding.EditPrdQty.setText("")
+            binding.EditPrdQty.visibility = View.INVISIBLE
+        }
 
         binding.imageView.setOnClickListener{
             if(ContextCompat.checkSelfPermission(requireActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)

@@ -11,9 +11,12 @@ class Constants {
         const val prd_list = ROOT_URL+"Product_List.php"
         const val prd_update = ROOT_URL+"Product_Update.php"
         const val prd_order = ROOT_URL+"Product_Order.php"
+        const val srv_order = ROOT_URL+"Service_Order.php"
         const val prd_payment = ROOT_URL+"Product_Payments.php"
         const val send_payment = ROOT_URL+"Send_Payments.php"
         const val url_refresh = ROOT_URL+"Refresh.php"
+        const val url_change_pay_status = ROOT_URL+"ChangePaymentStatus.php"
+        const val url_change_order_status = ROOT_URL+"Update_Order.php"
 
 
     }

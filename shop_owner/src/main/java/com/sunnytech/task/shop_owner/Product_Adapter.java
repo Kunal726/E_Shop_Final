@@ -43,9 +43,17 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.ViewHo
         {
             Product_Model model = product_modelArrayList.get(position);
             holder.product_name.setText(model.getPrdname());
-            String price = "Price = " + model.getPrice() + " Rs.";
             String qty = "Qty = " + model.getQty();
             holder.product_qty.setText(qty);
+            String price;
+            String str = SharedPrefmanager.getInstance(context.getApplicationContext()).getKeyShopCat();
+            if(str.equals("Electrician") || str.equals("Doctor") || str.equals("Plumber") || str.equals("Clinic")) {
+                holder.product_qty.setVisibility(View.INVISIBLE);
+                price = "Charges = " + model.getPrice() + " Rs.";
+            } else {
+                holder.product_qty.setVisibility(View.VISIBLE);
+                price = "Price = " + model.getPrice() + " Rs.";
+            }
             holder.product_price.setText(price);
             Glide.with(context).load(model.getImage()).into(holder.product_image);
             holder.cardView.setOnClickListener(view -> {

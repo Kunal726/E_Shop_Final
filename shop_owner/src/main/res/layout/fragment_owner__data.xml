@@ -150,6 +150,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text_range"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -189,6 +190,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/del_serv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

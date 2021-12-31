@@ -13,9 +13,9 @@ public class Payment_Model {
         this.paymentMode = paymentMode;
         this.paymentAmount = paymentAmount;
         if(paymentStatus.equalsIgnoreCase(String.valueOf('c')))
-            this.paymentStatus = paymentStatus.toUpperCase() + "ompleted";
+            this.paymentStatus = (paymentStatus + "ompleted").toUpperCase();
         else
-            this.paymentStatus = paymentStatus.toUpperCase() + "ending";
+            this.paymentStatus = (paymentStatus + "ending").toUpperCase();
     }
 
     public String getPaymentID() {

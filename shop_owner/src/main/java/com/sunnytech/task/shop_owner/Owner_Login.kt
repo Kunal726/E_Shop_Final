@@ -6,19 +6,15 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.os.Bundle
-import android.widget.TextView
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.sunnytech.task.shop_owner.databinding.FragmentOwnerLoginBinding
 import org.json.JSONException
 import org.json.JSONObject
-import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.HashMap
 
 class Owner_Login : Fragment() {
@@ -79,7 +75,9 @@ class Owner_Login : Fragment() {
                                     obj.getString("email"),
                                     obj.getString("shop"),
                                     obj.getString("date"),
-                                    obj.getString("status")
+                                    obj.getString("status"),
+                                    obj.getString("category"),
+                                    obj.getString("service")
                                 )
                             Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_LONG).show()
 

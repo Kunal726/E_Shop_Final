@@ -29,54 +29,56 @@ class Shop : AppCompatActivity() {
         setContentView(R.layout.activity_shop)
 
         AndroidNetworking.initialize(this.applicationContext)
-
         bottomNavigation = findViewById(R.id.bottom_navigation_view)
+        bottomNavigation.visibility = View.VISIBLE
         bottomNavigation.background = null
         bottomNavigation.setOnNavigationItemSelectedListener(navigationListener)
         bottomNavigation.selectedItemId = R.id.home
-
         findViewById<FloatingActionButton>(R.id.add_product).setOnClickListener{
             findViewById<FloatingActionButton>(R.id.add_product).visibility = View.INVISIBLE
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container_shop, ProductFragment()).commit()
         }
     }
 
-    private val navigationListener = BottomNavigationView.OnNavigationItemSelectedListener{
-        item: MenuItem ->
+    private val navigationListener = BottomNavigationView.OnNavigationItemSelectedListener { item: MenuItem ->
+        when (item.itemId) {
+            R.id.home -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container_shop, HomeFragment()).commit()
+                findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
+            }
+            R.id.bill -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container_shop, BillFragment()).commit()
+                findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
 
-            when (item.itemId) {
-                R.id.home -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_shop, HomeFragment()).commit()
-                    findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
+                val str = SharedPrefmanager.getInstance(this.applicationContext).keyShopCat
+                if(str == "Electrician" || str ==  "Doctor" || str ==  "Plumber" || str ==  "Clinic")
+                    item.title = "Orders"
+                else
+                    item.title = "Billing"
+            }
+            R.id.payment -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container_shop, PaymentFragment()).commit()
+                findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
+            }R.id.logout -> {
+                findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
+                AlertDialog.Builder(this)
+                    .setTitle("LogOut")
+                    .setMessage("Do You Really Want to LogOut ?")
+                    .setIcon(R.drawable.ic_logout)
+                    .setNegativeButton("No", null)
+                    .setPositiveButton("Yes") { _: DialogInterface, _: Int ->
+                        Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show()
+                        SharedPrefmanager.getInstance(this.applicationContext).logout()
+                        startActivity(Intent(this, Shop_Owner::class.java))
+                    }
+                    .create()
+                    .show()
                 }
-                R.id.bill -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_shop, BillFragment()).commit()
-                    findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
-                }
-                R.id.payment -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_shop, PaymentFragment()).commit()
-                    findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
-                }
-                R.id.logout -> {
-                    findViewById<FloatingActionButton>(R.id.add_product).visibility = View.VISIBLE
-                    AlertDialog.Builder(this)
-                        .setTitle("LogOut")
-                        .setMessage("Do You Really Want to LogOut ?")
-                        .setIcon(R.drawable.ic_logout)
-                        .setNegativeButton("No", null)
-                        .setPositiveButton("Yes") { _: DialogInterface, _: Int ->
-                            Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show()
-                            SharedPrefmanager.getInstance(this.applicationContext).logout()
-                            startActivity(Intent(this, Shop_Owner::class.java))
-                        }
-                        .create()
-                        .show()
-                }
+            }
 
-        }
         return@OnNavigationItemSelectedListener true
     }
 
@@ -88,8 +90,7 @@ class Shop : AppCompatActivity() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.menuexit -> {
 
                 val dialog = AlertDialog.Builder(this)
@@ -102,11 +103,10 @@ class Shop : AppCompatActivity() {
                 }
                 dialog.create()
                 dialog.show()
-
-                return true}
+                return true
+            }
             else -> return super.onOptionsItemSelected(item)
         }
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

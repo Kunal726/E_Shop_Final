@@ -14,6 +14,8 @@ public class SharedPrefmanager {
     private static final String KEY_SHOP_NAME = "shop";
     private static final String KEY_DATE = "date";
     private static final String KEY_STATUS = "status";
+    private static final String KEY_SHOP_CAT = "category";
+    private static final String KEY_DEL_SERVICE = "service";
 
     private SharedPrefmanager(Context context) {
         mCtx = context;
@@ -25,7 +27,7 @@ public class SharedPrefmanager {
         return mInstance;
     }
 
-    public boolean userLogin(int id, String name, String email, String shop, String date, String status)
+    public boolean userLogin(int id, String name, String email, String shop, String date, String status, String category, String service)
     {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -35,6 +37,8 @@ public class SharedPrefmanager {
         editor.putString(KEY_SHOP_NAME, shop);
         editor.putString(KEY_DATE, date);
         editor.putString(KEY_STATUS, status);
+        editor.putString(KEY_SHOP_CAT, category);
+        editor.putString(KEY_DEL_SERVICE, service);
         editor.apply();
         return true;
     }
@@ -62,13 +66,18 @@ public class SharedPrefmanager {
         return sharedPreferences.getInt(KEY_ID, 0);
     }
 
-    public String getKeyDate() {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(KEY_DATE, null);
-    }
     public String getKeyStatus() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_STATUS, null);
     }
 
+    public String getKeyShopCat() {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_SHOP_CAT, null);
+    }
+
+    public String getKeyDelService() {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_DEL_SERVICE, null);
+    }
 }
