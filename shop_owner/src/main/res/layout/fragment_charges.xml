@@ -9,6 +9,7 @@
     tools:context=".ChargesFragment">
 
     <TextView
+        android:id="@+id/text_charges"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/pay_monthly_service_charges"

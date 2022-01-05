@@ -105,6 +105,12 @@ class Shop : AppCompatActivity() {
                 dialog.show()
                 return true
             }
+
+            R.id.menucharge -> {
+                startActivity(Intent(this, Shop_Owner::class.java).putExtra("chrg" , "1"))
+                return true
+            }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }

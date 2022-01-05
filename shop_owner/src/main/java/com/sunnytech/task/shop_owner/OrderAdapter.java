@@ -44,6 +44,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             holder.orderdiscount.setText("Discount : " + orderModel.getDiscount());
             holder.finaltotal.setText("Final Total : " + orderModel.getFinaltotal());
             holder.status.setText("Order Status : " + orderModel.getStatus());
+            holder.tax.setText("Gst/Tax : " + orderModel.getTax());
             holder.orderlist.setLayoutManager(new LinearLayoutManager(context));
             orderListAdapter = new OrderListAdapter(context, orderModel.getOrderListModels());
             holder.orderlist.setAdapter(orderListAdapter);
@@ -57,7 +58,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView orderid, orderaddress, ordertotal, orderdiscount, finaltotal, status;
+        TextView orderid, orderaddress, ordertotal, orderdiscount, finaltotal, status, tax;
         RecyclerView orderlist;
 
         public ViewHolder(@NonNull View itemView) {
@@ -69,6 +70,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             finaltotal = itemView.findViewById(R.id.text_order_final_total);
             status = itemView.findViewById(R.id.text_order_status);
             orderlist = itemView.findViewById(R.id.order_list);
+            tax = itemView.findViewById(R.id.text_tax);
         }
     }
 }

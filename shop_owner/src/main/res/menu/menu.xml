@@ -7,4 +7,9 @@
         android:icon="@drawable/ic_exit"
         android:title="@string/exit"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menucharge"
+        android:icon="@drawable/ic_dollar"
+        android:title="@string/monthly_charges"/>
 </menu>

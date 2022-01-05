@@ -44,6 +44,7 @@ class ChargesFragment() : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSend.visibility = View.INVISIBLE
+        ("Pay Monthly Service Charges : Rs. " + SharedPrefmanager.getInstance(requireContext().applicationContext).keyCharge).also { binding.textCharges.text = it }
 
         binding.imgViewCharges.setOnClickListener{
             if(ContextCompat.checkSelfPermission(requireActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
@@ -105,6 +106,7 @@ class ChargesFragment() : Fragment() {
                 .addMultipartFile("image", file)
                 .addMultipartParameter("shop",SharedPrefmanager.getInstance(requireContext().applicationContext).keyShopName)
                 .addMultipartParameter("owner",SharedPrefmanager.getInstance(requireContext().applicationContext).keyId.toString())
+                .addMultipartParameter("charges",SharedPrefmanager.getInstance(requireContext().applicationContext).keyCharge)
                 .setPriority(Priority.HIGH)
                 .build()
                 .setUploadProgressListener{bytesUploaded, totalBytes ->
@@ -121,8 +123,7 @@ class ChargesFragment() : Fragment() {
                             (activity as Shop_Owner).appcharge = 1
 
                             SharedPrefmanager.getInstance(requireContext().applicationContext).logout()
-                                parentFragmentManager.beginTransaction()
-                                    .replace(R.id.frag_container, Owner_Login()).commit()
+                            startActivity(Intent((activity as Shop_Owner), Shop_Owner::class.java))
 
                         }
                     }

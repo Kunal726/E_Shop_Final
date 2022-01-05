@@ -98,7 +98,8 @@ class BillFragment : Fragment() {
                                         order.getString("discount"),
                                         order.getString("finaltotal"),
                                         order.getString("status"),
-                                        orderListModels
+                                        orderListModels,
+                                        order.getString("tax")
                                     )
                                 )
 
@@ -170,7 +171,8 @@ class BillFragment : Fragment() {
                                         service.getString("addr"),
                                         service.getString("status"),
                                         serviceListModels,
-                                        service.getString("price")
+                                        service.getString("price"),
+                                        service.getString("tax")
                                     )
                                 )
 

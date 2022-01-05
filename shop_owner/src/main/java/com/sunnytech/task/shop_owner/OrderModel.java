@@ -10,14 +10,16 @@ public class OrderModel {
     private final String Finaltotal;
     private final ArrayList<OrderListModel> orderListModels;
     private final String Status;
+    private final String Tax;
 
-    public OrderModel(String id, String addr, String total, String discount, String finaltotal, String status, ArrayList<OrderListModel> orderListModels) {
+    public OrderModel(String id, String addr, String total, String discount, String finaltotal, String status, ArrayList<OrderListModel> orderListModels, String tax) {
         Id = id;
         Addr = addr;
         Total = total;
         Discount = discount;
         Finaltotal = finaltotal;
         this.orderListModels = orderListModels;
+        Tax = tax;
         if(status.equals("D")) {
             Status = status.concat("elivered");
         } else {
@@ -51,5 +53,9 @@ public class OrderModel {
 
     public String getStatus() {
         return Status;
+    }
+
+    public String getTax() {
+        return Tax;
     }
 }

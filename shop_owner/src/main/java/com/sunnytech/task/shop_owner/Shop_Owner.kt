@@ -29,60 +29,68 @@ class Shop_Owner : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop_owner)
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
+        if (intent.hasExtra("chrg"))
+        {
+            supportFragmentManager.beginTransaction().replace(R.id.frag_container, ChargesFragment()).commit()
+        } else {
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
 
-        if (SharedPrefmanager.getInstance(applicationContext).isLoggedIN) {
+            if (SharedPrefmanager.getInstance(applicationContext).isLoggedIN) {
 
-            val stringRequest = @SuppressLint("SimpleDateFormat")
-            object : StringRequest(
-                Method.POST, Constants.url_refresh,
-                Response.Listener { s ->
-                    try {
-                        val obj = JSONObject(s)
-                        if(!obj.getBoolean("error")) {
-                            SharedPrefmanager.getInstance(this.applicationContext)
-                                .userLogin(
-                                    obj.getInt("id"),
-                                    obj.getString("name"),
-                                    obj.getString("email"),
-                                    obj.getString("shop"),
-                                    obj.getString("date"),
-                                    obj.getString("status"),
-                                    obj.getString("category"),
-                                    obj.getString("service")
-                                )
+                val stringRequest = @SuppressLint("SimpleDateFormat")
+                object : StringRequest(
+                    Method.POST, Constants.url_refresh,
+                    Response.Listener { s ->
+                        try {
+                            val obj = JSONObject(s)
+                            if(!obj.getBoolean("error")) {
+                                SharedPrefmanager.getInstance(this.applicationContext)
+                                    .userLogin(
+                                        obj.getInt("id"),
+                                        obj.getString("name"),
+                                        obj.getString("email"),
+                                        obj.getString("shop"),
+                                        obj.getString("date"),
+                                        obj.getString("status"),
+                                        obj.getString("category"),
+                                        obj.getString("service"),
+                                        obj.getString("monthly_charges")
+                                    )
 
+                            }
+                        } catch (e : JSONException) {
+                            e.stackTrace
                         }
-                    } catch (e : JSONException) {
-                        e.stackTrace
+
+                    },
+                    Response.ErrorListener { e ->
+
+                    }){
+                    override fun getParams(): MutableMap<String, String> {
+                        val params: MutableMap<String, String> = HashMap()
+                        params["owner"] = SharedPrefmanager.getInstance(this@Shop_Owner.applicationContext).keyId.toString()
+                        return params
                     }
+                }
+                val requestQueue = Volley.newRequestQueue(this)
+                requestQueue.add(stringRequest)
 
-                },
-                Response.ErrorListener { e ->
 
-                }){
-                override fun getParams(): MutableMap<String, String> {
-                    val params: MutableMap<String, String> = HashMap()
-                    params["owner"] = SharedPrefmanager.getInstance(this@Shop_Owner.applicationContext).keyId.toString()
-                    return params
+                if (SharedPrefmanager.getInstance(applicationContext).keyStatus != "ACTIVE")
+                {
+                    supportFragmentManager.beginTransaction().replace(R.id.frag_container, ChargesFragment()).commit()
+                } else {
+                    startActivity(Intent(this, Shop::class.java))
                 }
             }
-            val requestQueue = Volley.newRequestQueue(this)
-            requestQueue.add(stringRequest)
+            else
+                fragmentTransaction.replace(R.id.frag_container, Owner_Login())
 
-
-            if (SharedPrefmanager.getInstance(applicationContext).keyStatus != "ACTIVE")
-            {
-                supportFragmentManager.beginTransaction().replace(R.id.frag_container, ChargesFragment()).commit()
-            } else {
-                startActivity(Intent(this, Shop::class.java))
-            }
+            fragmentTransaction.commit()
         }
-        else
-            fragmentTransaction.replace(R.id.frag_container, Owner_Login())
 
-        fragmentTransaction.commit()
+
 
     }
 

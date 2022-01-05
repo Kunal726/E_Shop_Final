@@ -8,14 +8,16 @@ public class ServiceModel {
     private final String Address;
     private final String Status;
     private final String Price;
+    private final String Tax;
     private final ArrayList<ServiceListModel> serviceListModels;
 
-    public ServiceModel(String orderId,  String time, String address, String status, ArrayList<ServiceListModel> serviceListModels, String price) {
+    public ServiceModel(String orderId, String time, String address, String status, ArrayList<ServiceListModel> serviceListModels, String price, String tax) {
         OrderId = orderId;
         Time = time;
         Address = address;
         this.serviceListModels = serviceListModels;
         this.Price = price;
+        Tax = tax;
         if(status.equalsIgnoreCase("C")) {
             Status = status.concat("ompleted").toUpperCase();
         } else {
@@ -45,5 +47,9 @@ public class ServiceModel {
 
     public String getPrice() {
         return Price;
+    }
+
+    public String getTax() {
+        return Tax;
     }
 }

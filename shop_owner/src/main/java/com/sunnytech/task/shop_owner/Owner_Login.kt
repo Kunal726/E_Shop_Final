@@ -77,7 +77,8 @@ class Owner_Login : Fragment() {
                                     obj.getString("date"),
                                     obj.getString("status"),
                                     obj.getString("category"),
-                                    obj.getString("service")
+                                    obj.getString("service"),
+                                    obj.getString("monthly_charges")
                                 )
                             Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_LONG).show()
 

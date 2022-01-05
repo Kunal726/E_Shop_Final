@@ -57,6 +57,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
             holder.status.setText("Service Status : " + serviceModel.getStatus());
             holder.time.setText("Service time : " + serviceModel.getTime());
             holder.price.setText("Price : " + serviceModel.getPrice());
+            holder.tax.setText("Tax/Gst : " + serviceModel.getTax());
             holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
             ServiceListAdapter serviceListAdapter = new ServiceListAdapter(context, serviceModel.getServiceListModels());
             holder.recyclerView.setAdapter(serviceListAdapter);
@@ -112,7 +113,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView id, addr, status, time, price;
+        TextView id, addr, status, time, price, tax;
         RecyclerView recyclerView;
         AppCompatButton appCompatButton;
         public ViewHolder(@NonNull View itemView) {
@@ -124,6 +125,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
             price = itemView.findViewById(R.id.text_service_final_total);
             recyclerView = itemView.findViewById(R.id.cause_list);
             appCompatButton = itemView.findViewById(R.id.btn_complete);
+            tax = itemView.findViewById(R.id.text_service_tax);
         }
     }
 }

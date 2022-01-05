@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:stretchColumns="1,2">
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="200dp"
+            android:id="@+id/order_service_name"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:layout_column="1"
+            android:textColor="@color/orange"
+            android:maxLines="2"/>
+
+        <TextView
+            android:id="@+id/order_service_price"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:layout_column="1"
+            android:gravity="center"
+            android:textColor="@color/orange"/>
+
+    </TableRow>
+
+</TableLayout>
