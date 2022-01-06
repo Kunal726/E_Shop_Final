@@ -2,8 +2,8 @@ package com.sunnytech.task.eshop_admin
 
 class Constants {
     companion object {
-        private const val ROOT_URL = "http://192.168.234.58/EShop/Admin/"
-        const val IMAGE_ROOT_URL = "http://192.168.234.58/EShop/Payments/"
+        private const val ROOT_URL = "https://balramsanjai.com/EShop/Admin/"
+        const val IMAGE_ROOT_URL = "https://balramsanjai.com/EShop/Payments/"
         const val url_login = ROOT_URL + "Admin_Login.php"
         const val url_shop_name_list = ROOT_URL + "Shop_name_list.php"
         const val url_shop_details = ROOT_URL + "Shop_Details.php"
