@@ -7,7 +7,7 @@
            
             $on = time()." - ".$_POST['shop'].".jpg";
             $sn = $_FILES['image']['tmp_name'];
-            $dn = "Payments/".$on;
+            $dn = "../Payments/".$on;
             
             $db = new DbOperations_Owner();
 

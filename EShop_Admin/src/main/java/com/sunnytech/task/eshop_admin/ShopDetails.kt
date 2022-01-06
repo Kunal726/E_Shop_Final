@@ -47,7 +47,7 @@ class ShopDetails() : AppCompatActivity() {
         findViewById<AppCompatButton>(R.id.set_gst).setOnClickListener{setGST()}
         findViewById<AppCompatButton>(R.id.set_charges).setOnClickListener{setCharges()}
         findViewById<AppCompatButton>(R.id.charges).setOnClickListener{
-            startActivity(Intent(this@ShopDetails, Charges::class.java).putExtra("id", id).putExtra("cat", cat))
+            startActivity(Intent(this@ShopDetails, Charges::class.java).putExtra("id", id))
         }
         findViewById<AppCompatButton>(R.id.bill).setOnClickListener{
             startActivity(Intent(this@ShopDetails, Bill::class.java).putExtra("id", id).putExtra("cat", cat))

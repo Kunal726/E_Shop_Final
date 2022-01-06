@@ -200,8 +200,4 @@ class Bill : AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        startActivity(Intent(this, ShopDetails::class.java).putExtra("id", shopid).putExtra("cat", category))
-    }
 }

@@ -18,7 +18,6 @@ import org.json.JSONException
 
 class Charges : AppCompatActivity(), charge_info {
     private var shopid = ""
-    private var cat = ""
     private lateinit var chargesAdapter : Charges_Adapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var chargesmodel : ArrayList<Charges_Model>
@@ -29,7 +28,7 @@ class Charges : AppCompatActivity(), charge_info {
         setContentView(R.layout.activity_charges)
 
         shopid = intent.getStringExtra("id").toString()
-        cat = intent.getStringExtra("cat").toString()
+
         chargesmodel = ArrayList()
         chargesAdapter = Charges_Adapter(this@Charges, chargesmodel, this)
         recyclerView = findViewById(R.id.charges_list)
@@ -99,10 +98,5 @@ class Charges : AppCompatActivity(), charge_info {
 
     override fun OnClickCharges(img: String) {
         Glide.with(this).load(img).into(image)
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        startActivity(Intent(this, ShopDetails::class.java).putExtra("id", shopid).putExtra("cat", cat))
     }
 }
