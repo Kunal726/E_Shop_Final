@@ -53,12 +53,12 @@ class ProductFragment : Fragment() {
         binding.EditPrdPrice.setText("")
         binding.EditPrdQty.setText("")
         val str = SharedPrefmanager.getInstance(requireContext().applicationContext).keyShopCat
-        if(str == "Electrician" || str ==  "Doctor" || str ==  "Plumber" || str ==  "Clinic"){
+        if(str == "Electrician" || str ==  "Doctor" || str ==  "Plumber" || str ==  "Clinic" || str == "Restaurant"){
             binding.EditPrdQty.setText("0")
             binding.EditPrdQty.visibility = View.GONE
         } else {
             binding.EditPrdQty.setText("")
-            binding.EditPrdQty.visibility = View.INVISIBLE
+            binding.EditPrdQty.visibility = View.VISIBLE
         }
 
         binding.imageView.setOnClickListener{

@@ -41,7 +41,7 @@ class SingleProductFragment(private var productmodelarraylist : ArrayList<Produc
         binding.btnSave.visibility = View.INVISIBLE
 
         val str = SharedPrefmanager.getInstance(requireContext().applicationContext).keyShopCat
-        if(str == "Electrician" || str ==  "Doctor" || str ==  "Plumber" || str ==  "Clinic") {
+        if(str == "Electrician" || str ==  "Doctor" || str ==  "Plumber" || str ==  "Clinic" || str == "Restaurant") {
             binding.layoutqty.visibility = View.GONE
         } else {
             binding.layoutqty.visibility = View.VISIBLE
