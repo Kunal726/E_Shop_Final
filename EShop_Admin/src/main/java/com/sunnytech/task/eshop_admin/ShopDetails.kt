@@ -256,6 +256,9 @@ class ShopDetails() : AppCompatActivity() {
                                 "TAX/GST : " + obj.getString("gst")
                             findViewById<TextView>(R.id.charge).text =
                                 "Charges : " + obj.getString("charges")
+                            findViewById<TextView>(R.id.scat).text =
+                                "Catrgory : " + obj.getString("cat")
+
 
                             ownerid = obj.getInt("oid")
 

@@ -43,6 +43,20 @@
                 android:padding="5dp"/>
 
             <TextView
+                android:id="@+id/scat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:padding="5dp"/>
+
+
+
+            <TextView
                 android:id="@+id/oname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

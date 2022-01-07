@@ -33,7 +33,7 @@
         }
 
         function getDetails($shopid) {
-            $stmt = $this -> con -> prepare("SELECT s.`shop_name`, o.owner_name, o.date_created, o.status, s.`tax_gst`, s.`owner_id`, s.`monthly_charges` FROM `shop` s INNER JOIN shop_owner o on s.`owner_id` = o.owner_id WHERE `shop_id` = ? ");
+            $stmt = $this -> con -> prepare("SELECT s.`shop_name`, o.owner_name, o.date_created, o.status, s.`tax_gst`, s.`owner_id`, s.`monthly_charges`, s.`shop_category` FROM `shop` s INNER JOIN shop_owner o on s.`owner_id` = o.owner_id WHERE `shop_id` = ? ");
             $stmt -> bind_param("i", $shopid);
             $stmt -> execute();
             $result = $stmt -> get_result();

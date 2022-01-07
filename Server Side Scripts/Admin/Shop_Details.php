@@ -17,6 +17,7 @@
                 $response['gst'] = $row['tax_gst'];
                 $response['oid'] = $row['owner_id'];
                 $response['charges'] = $row['monthly_charges'];
+                $response['cat'] = $row['shop_category'];
             } else {
                 $response['error'] = true;
             $response['message'] = "No Data Found";
