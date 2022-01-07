@@ -104,6 +104,10 @@ class Shop_Admin_Main : AppCompatActivity(), Shop_Info {
                 dialog.show()
                 return true
             }
+            R.id.refresh -> {
+                startActivity(Intent(this, Shop_Admin_Main::class.java))
+                return true
+            }
 
             else -> return super.onOptionsItemSelected(item)
         }

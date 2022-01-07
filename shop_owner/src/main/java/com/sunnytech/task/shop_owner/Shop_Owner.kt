@@ -2,12 +2,14 @@ package com.sunnytech.task.shop_owner
 
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -38,10 +40,15 @@ class Shop_Owner : AppCompatActivity() {
 
             if (SharedPrefmanager.getInstance(applicationContext).isLoggedIN) {
 
+                val progressDialog = ProgressDialog(this)
+                progressDialog.setMessage("Loading........")
+                progressDialog.show()
+
                 val stringRequest = @SuppressLint("SimpleDateFormat")
                 object : StringRequest(
                     Method.POST, Constants.url_refresh,
                     Response.Listener { s ->
+                        progressDialog.dismiss()
                         try {
                             val obj = JSONObject(s)
                             if(!obj.getBoolean("error")) {
@@ -72,7 +79,9 @@ class Shop_Owner : AppCompatActivity() {
 
                     },
                     Response.ErrorListener { e ->
-
+                        progressDialog.dismiss()
+                        Toast.makeText(this, "Error. Please Try Again ", Toast.LENGTH_SHORT).show()
+                        finishAffinity()
                     }){
                     override fun getParams(): MutableMap<String, String> {
                         val params: MutableMap<String, String> = HashMap()
@@ -96,6 +105,7 @@ class Shop_Owner : AppCompatActivity() {
 
     override fun onRestart() {
         super.onRestart()
+        finishAffinity()
 
     }
 
