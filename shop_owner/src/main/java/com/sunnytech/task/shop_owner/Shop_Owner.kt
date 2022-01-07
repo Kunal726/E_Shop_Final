@@ -58,6 +58,13 @@ class Shop_Owner : AppCompatActivity() {
                                         obj.getString("monthly_charges")
                                     )
 
+                                if (SharedPrefmanager.getInstance(applicationContext).keyStatus != "ACTIVE")
+                                {
+                                    supportFragmentManager.beginTransaction().replace(R.id.frag_container, ChargesFragment()).commit()
+                                } else {
+                                    startActivity(Intent(this, Shop::class.java))
+                                }
+
                             }
                         } catch (e : JSONException) {
                             e.stackTrace
@@ -76,13 +83,6 @@ class Shop_Owner : AppCompatActivity() {
                 val requestQueue = Volley.newRequestQueue(this)
                 requestQueue.add(stringRequest)
 
-
-                if (SharedPrefmanager.getInstance(applicationContext).keyStatus != "ACTIVE")
-                {
-                    supportFragmentManager.beginTransaction().replace(R.id.frag_container, ChargesFragment()).commit()
-                } else {
-                    startActivity(Intent(this, Shop::class.java))
-                }
             }
             else
                 fragmentTransaction.replace(R.id.frag_container, Owner_Login())
