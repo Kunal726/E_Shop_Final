@@ -2,8 +2,8 @@ package com.sunnytech.task.shop_owner
 
 class Constants {
     companion object {
-        private const val ROOT_URL = "https://balramsanjai.com/EShop/Owner/"
-        const val IMAGE_ROOT_URL = "https://balramsanjai.com/EShop/Payments/"
+        private const val ROOT_URL = "http://localhost.com/EShop/Owner/"
+        const val IMAGE_ROOT_URL = "http://localhost.com/EShop/Payments/"
         const val url_register = ROOT_URL+"Register_Owner.php"
         const val url_save = ROOT_URL+"Save_Owner.php"
         const val url_login_owner = ROOT_URL+"Owner_Login.php"
